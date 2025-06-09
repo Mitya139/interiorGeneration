@@ -2,6 +2,15 @@ from interior_generator import InteriorGenerator
 from dotenv import load_dotenv
 import os
 
+# parameters for generation
+SEED = 444
+REF_IMAGE_PATH = "input/bauhaus.jpg"
+ROOM_DESCRIPTION = (
+    "A lively entertainment room with a large screen "
+    "and comfortable seating"
+)
+OUTPUT_IMAGE_PATH = "output/bauhaus.png"
+
 load_dotenv()
 
 user = os.getenv("PROXY_USER")
@@ -19,10 +28,9 @@ if host and port:
     os.environ['HTTP_PROXY'] = proxy
     print(f'Connected to the proxy: {proxy}')
 
-generator = InteriorGenerator(seed=444)
+generator = InteriorGenerator(seed=SEED)
 
-img = generator.generate_interior(ref_image_path='input/bauhaus.jpg',
-                                  room_description='A lively entertainment room with a large screen and comfortable '
-                                                   'seating')
+img = generator.generate_interior(ref_image_path=REF_IMAGE_PATH,
+                                  room_description=ROOM_DESCRIPTION)
 
-img.save("output/bauhaus.png")
+img.save(OUTPUT_IMAGE_PATH)
