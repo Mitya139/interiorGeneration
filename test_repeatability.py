@@ -1,7 +1,6 @@
 import os
 import pytest
 from dotenv import load_dotenv
-from PIL import Image
 import imagehash
 
 from interior_generator import InteriorGenerator
@@ -32,7 +31,7 @@ def _generate_twice(tmp_path, seed: int):
     gen = InteriorGenerator(seed=seed)
 
     desc = "Amazing good room with tv on the wall, two beds and big mirror"
-    input_img = "input/3.jpg"
+    input_img = "input/farmhouse.jpg"
 
     style1 = gen.extract_style(input_img)
     style2 = gen.extract_style(input_img)
