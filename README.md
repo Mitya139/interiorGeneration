@@ -59,6 +59,8 @@ pytest -q                    # запустит тест repeatability
 | Извлечение стиля    | `gemini-2.5-flash-preview-05-20`         | `temperature=0` |
 | Генерация интерьера | `gemini-2.0-flash-preview-image-generation` | `temperature=0`, `seed=<фиксированный>` |
 
+Основная реализация в классе `InteriorGenerator` - выделение стиля из входной картинки и генерация нового изображения через запросы к `GEMINI API`.
+
 Детерминизм достигается фиксированным `seed` + нулевой температурой.  
 `test_repeatability.py` сравнивает:
 
