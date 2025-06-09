@@ -39,9 +39,9 @@ PROXY_PASS=secret
 ---
 
 ## Запуск
-Перед запуском возможно вам потребуется поставить proxy или VPN, так как модель `gemini-2.0-flash-preview-image-generation` недоступна при запросе с ряда IP-адресов (см. информацию по [ссылке](https://ai.google.dev/gemini-api/docs/models#gemini-2.0-flash-preview-image-generation)).
+Перед запуском возможно вам потребуется поставить proxy или VPN, так как модель `gemini-2.0-flash-preview-image-generation` недоступна при запросе с ряда IP-адресов (см. информацию по [ссылке](https://ai.google.dev/gemini-api/docs/models#gemini-2.0-flash-preview-image-generation)). (Я использовал US proxy)
 
-Укажите в вызове метода класса `generate_interior` в `main.py` при необходимости параметры `seed`, `ref_image_path`, `room_description`
+Укажите в `main.py` при необходимости параметры `SEED`, `REF_IMAGE_PATH`, `ROOM_DESCRIPTION` и `OUTPUT_IMAGE_PATH`
 
 ```bash
 pip install -r requirements.txt
